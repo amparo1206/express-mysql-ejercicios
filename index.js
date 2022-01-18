@@ -39,23 +39,24 @@ app.get('/categoria_has_productos',(req,res)=>{
   })
 })
 
-app.get('/createdproduct', (req, res) => {
-    let sql = 'CREATED TABLE product(id int AUTO_INCREMENT, tittle VARCHAR(255), body VARCHAR(255), PRIMARY KEY(id))'
-    db.query(sql, (err, result) => {
-        if (err) throw err;
-        console.log(result);
-        res.send('Product table created...')
+app.post('/postProductoCategoria', (req,res)=>{
+    let post = {id_producto: req.body.id_producto, id_categoria: req.body.id_categoria}
+    let sql = 'INSERT INTO expressdb.categoria_has_productos SET ?'
+    db.query(sql,post,(err,result)=>{
+      if(err) throw err
+      console.log(result)
+      res.send("Cositas posteadas...");
     })
-})
+  })
+app.get('/createProductos',(req,res)=>{
+    let sql ='CREATE TABLE productos(idProducto int AUTO_INCREMENT, tituloProducto VARCHAR(255), precio VARCHAR(255), PRIMARY KEY(idProducto))'
+    db.query(sql,(err, result)=>{
+      if(err) throw err;
+      console.log(result);
+      res.send("Tabla de productos creada...");
+    })
+  })
 
-app.get('/createdcategory', (req, res) => {
-    let sql = 'CREATED TABLE category(id int AUTO_INCREMENT, tittle VARCHAR(255), body VARCHAR(255), PRIMARY KEY(id))'
-    db.query(sql, (err, result) => {
-        if (err) throw err;
-        console.log(result);
-        res.send('Category tabled created..')
-    })
-})
 
 app.post('/', (req, res)=> {
     let post = { tittle: 'post 1', body: 'this post is the number one' };
