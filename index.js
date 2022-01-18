@@ -168,6 +168,18 @@ app.put('/updateProducto/:id',(req,res)=>{
        res.send("Producto actualizado...");
     })
 })
+
+app.put('/updateProducto/:id',(req,res)=>{
+    let newTitleProd = req.body.tituloProducto;
+    let newPrecioProd = req.body.precio;
+    let sql = `UPDATE productos SET tituloProducto = "${newTitleProd}", precio = "${newPrecioProd}" WHERE idProducto = ${req.params.id}`;
+    db.query(sql,(err, result)=>{
+       if(err) throw err;
+       console.log(result);
+       res.send("Producto actualizado...");
+    })
+})
+  
   
 
 
