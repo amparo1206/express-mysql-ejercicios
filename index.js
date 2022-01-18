@@ -64,7 +64,16 @@ app.get('/SeleccionaProducto/:id', (req, res) => {
       console.log(result)
       res.send(`Producto con id ${req.params.id} seleccionado`);
     })
-  })
+})
+
+app.get('/SeleccionaProductoName/:tituloProducto',(req,res)=>{
+    let sql =`SELECT * FROM expressdb.productos WHERE tituloProducto ="${req.params.tituloProducto}"`;
+    db.query(sql,(err,result)=>{
+      if(err) throw err
+      console.log(result)
+      res.send(`Producto con titulo ${req.params.tituloProducto} seleccionado`);
+    })
+})
 
 app.post('/', (req, res)=> {
     let post = { tittle: 'post 1', body: 'this post is the number one' };
