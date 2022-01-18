@@ -22,7 +22,7 @@ app.get('/createdb',(req,res)=>{
     })
   }) 
 
-  app.get('/createtable',(req,res)=>{
+app.get('/createtable', (req, res) => {
     let sql = 'CREATE TABLE posts(id int AUTO_INCREMENT, title VARCHAR(255), body VARCHAR(255), PRIMARY KEY(id))'
       db.query(sql,(err,result)=> {
         if(err) throw err;
@@ -30,6 +30,14 @@ app.get('/createdb',(req,res)=>{
         res.send('Posts table created...')
       })
   })
+app.get('/categoria_has_productos',(req,res)=>{
+  let sql = 'CREATE TABLE expressdb.categoria_has_productos ( id INT AUTO_INCREMENT, id_categoria INT, id_producto INT, PRIMARY KEY(id), FOREIGN KEY(id_producto) REFERENCES productos(idProducto), FOREIGN KEY(id_categoria) REFERENCES categorias(idCategoria))'
+  db.query(sql,(err,result)=>{
+    if(err) throw err;
+    console.log(result);
+    res.send("Categoria_has_productos ha sido creada...");
+  })
+})
 
 app.get('/createdproduct', (req, res) => {
     let sql = 'CREATED TABLE product(id int AUTO_INCREMENT, tittle VARCHAR(255), body VARCHAR(255), PRIMARY KEY(id))'
