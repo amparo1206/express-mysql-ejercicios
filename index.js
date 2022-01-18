@@ -158,6 +158,17 @@ app.delete('/deleteProducto/:id',(req,res)=>{
     })
 })
 
+app.put('/updateProducto/:id',(req,res)=>{
+    let newTitleProd = req.body.tituloProducto;
+    let newPrecioProd = req.body.precio;
+    let sql = `UPDATE productos SET tituloProducto = "${newTitleProd}", precio = "${newPrecioProd}" WHERE idProducto = ${req.params.id}`;
+    db.query(sql,(err, result)=>{
+       if(err) throw err;
+       console.log(result);
+       res.send("Producto actualizado...");
+    })
+})
+  
 
 
 app.listen(4000,()=>{
