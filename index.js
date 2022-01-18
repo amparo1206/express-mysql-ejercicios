@@ -101,6 +101,15 @@ app.get('/getAllProductos', (req,res)=>{
       res.send("Listado de productos...");
     })
 })
+
+app.get('/getAllCategorias', (req, res)=>{
+    let sql = "SELECT * FROM expressdb.categorias";
+    db.query(sql,(err,result)=>{
+      if(err) throw err
+      console.log(result);
+      res.send("Listado de categorias...");
+    })
+})
   
   
 app.post('/', (req, res)=> {
