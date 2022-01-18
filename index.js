@@ -92,6 +92,16 @@ app.get('/SelectAllProductos',(req,res)=>{
       res.send("Lista de productos seleccionados")
     })
 })
+
+app.get('/getAllProductos', (req,res)=>{
+    let sql = "SELECT * FROM expressdb.productos";
+    db.query(sql,(err, result)=>{
+      if(err) throw err
+      console.log(result)
+      res.send("Listado de productos...");
+    })
+})
+  
   
 app.post('/', (req, res)=> {
     let post = { tittle: 'post 1', body: 'this post is the number one' };
