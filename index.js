@@ -75,6 +75,15 @@ app.get('/SeleccionaProductoName/:tituloProducto',(req,res)=>{
     })
 })
 
+app.get('/SeleccionaCategoria/:id',(req,res)=>{
+    let sql =`SELECT * FROM expressdb.categorias WHERE idCategoria = ${req.params.id}`;
+    db.query(sql,(err,result)=>{
+      if(err) throw err
+      console.log(result)
+      res.send(`Categoria con id ${req.params.id} seleccionado`);
+    })
+})
+  
 app.post('/', (req, res)=> {
     let post = { tittle: 'post 1', body: 'this post is the number one' };
     let sql = 'INSERT INTO post SET ?'
