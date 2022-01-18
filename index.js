@@ -139,7 +139,24 @@ app.post('/postCategoria', (req,res)=>{
       res.send("Categoría insertada en la BD...");
     })
 })
+
+app.delete('/deleteFromCategoriaProducto/:id',(req,res)=>{
+    let sql = `DELETE FROM expressdb.categoria_has_productos WHERE id_producto = ${req.params.id}`;
+    db.query(sql, (err,result)=>{
+      if (err) throw err
+      console.log(result)
+      res.send("Producto de categoria_has_producto borrado...");
+    })
+})
   
+app.delete('/deleteProducto/:id',(req,res)=>{
+    let sql = `DELETE FROM expressdb.productos WHERE idProducto = ${req.params.id}`;
+    db.query(sql, (err,result)=>{
+      if (err) throw err
+      console.log(result)
+      res.send("Producto borrado...");
+    })
+})
 
 
 
