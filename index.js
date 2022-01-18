@@ -110,17 +110,26 @@ app.get('/getAllCategorias', (req, res)=>{
       res.send("Listado de categorias...");
     })
 })
-  
-  
-app.post('/', (req, res)=> {
-    let post = { tittle: 'post 1', body: 'this post is the number one' };
-    let sql = 'INSERT INTO post SET ?'
-    db.querry(sql, post, (err, result) => {
-        if (err) throw err;
-        console.log(result);
-        res.send('Post added...')
+
+app.get('/createCategorias',(req,res)=>{
+    let sql='CREATE TABLE categorias(idCategoria int AUTO_INCREMENT, tituloCategoria VARCHAR(255), PRIMARY KEY(idCategoria))'
+    db.query(sql,(err,result)=>{
+      if(err) throw err;
+      console.log(result);
+      console.log("Tabla de categorías creada...");
     })
 })
+  
+app.post('/postProducto',(req,res)=>{
+    let post = { tituloProducto: req.body.tituloProducto, precio: req.body.precio}
+    let sql = 'INSERT INTO expressdb.productos SET ?'
+    db.query(sql,post,(err,result)=>{
+      if(err) throw err;
+      console.log(result);
+      res.send("Producto insertado en la BD...");
+    })
+})
+
 
 
 
