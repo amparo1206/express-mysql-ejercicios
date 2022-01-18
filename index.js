@@ -130,7 +130,16 @@ app.post('/postProducto',(req,res)=>{
     })
 })
 
-
+app.post('/postCategoria', (req,res)=>{
+    let post = {tituloCategoria: req.body.tituloCategoria};
+    let sql = 'INSERT INTO categorias SET ?'
+    db.query(sql,post,(err,result)=>{
+      if(err) throw err;
+      console.log(result);
+      res.send("Categoría insertada en la BD...");
+    })
+})
+  
 
 
 
