@@ -5,6 +5,8 @@ const db = require('./config/database.js');
 
 app.use(express.json())  
 
+app.use('/posts', require('./routes/posts'));
+
 app.get('/createdb',(req,res)=>{
     let sql ='CREATE DATABASE expressDB';
     db.query(sql,(err,result)=>{
