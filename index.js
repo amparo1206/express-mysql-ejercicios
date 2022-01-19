@@ -3,8 +3,9 @@ const app = express();
 
 app.use(express.json())  
 
-app.use('/posts', require('./routes/categorias'));
-app.use('/posts', require('./routes/products'));
+app.use('/categorias', require('./routes/categorias'));
+app.use('/products', require('./routes/products'));
+app.use('/databaseController', require('./routes/database'));
 
 router.listen(4000,()=>{
     console.log('servidor levantado en el puerto 4000')

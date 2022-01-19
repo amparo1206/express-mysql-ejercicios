@@ -1,7 +1,7 @@
 const db = require("../config/database.js");
 
 const productController = {
-    createProducts(req,res){
+    createTableProducts(req,res){
         let sql ='CREATE TABLE productos(idProducto int AUTO_INCREMENT, tituloProducto VARCHAR(255), precio VARCHAR(255), PRIMARY KEY(idProducto))'
         db.query(sql,(err, result)=>{
           if(err) throw err;
