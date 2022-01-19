@@ -1,17 +1,9 @@
 const express = require('express');
 const app = express();
-const mysql = require('mysql2');
 
-app.use(express.json())
+const db = require('./config/database.js');
 
-const db = mysql.createConnection({
-    host     : 'localhost',
-    user     : 'root',
-    password : '2752arm.',
-    database:'expressDB'
-});
-  
-  db.connect();
+app.use(express.json())  
 
 app.get('/createdb',(req,res)=>{
     let sql ='CREATE DATABASE expressDB';
@@ -189,9 +181,6 @@ app.post('/', (req,res)=>{
       res.send('Post added...');
     })
 })
-
-  
-
 
 app.listen(4000,()=>{
     console.log('servidor levantado en el puerto 4000')
