@@ -75,3 +75,7 @@ Crea una carpeta config  y que tenga un archivo database.js que contenga los dat
 ⦁ Crea un archivo categories.js dentro de una carpeta routes que contenga todas las rutas de categories.
 
 ⦁ Crea un CategoryController.js que contenga todas las acciones de los categories.
+
+## Autora 👩🏼‍💻
+
+* **Amparo Ramada** - [amparo1206] (https://github.com/amparo1206)
