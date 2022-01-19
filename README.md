@@ -14,7 +14,7 @@ _Objetivos de los ejercicios_
 
 ⦁ Aprender a utilizar MySql con Express.
 
-## ⚪ Endpoints
+## ⚪ Endpoints parte 1
 
 🔷 _Ejercicio 1_
 
@@ -59,3 +59,20 @@ _Objetivos de los ejercicios_
 ⦁ Crea un endpoint donde puedas buscar un producto por su nombre. ✅
 
 ⦁ Crea un endpoint donde puedas eliminar un producto por su id. ✅
+
+## ⚪ Endpoints parte 2
+
+🔷 _Ejercicio 1_
+
+Crea una carpeta config  y que tenga un archivo database.js que contenga los datos de la conexión de la base de datos y crea otro archivo database.example.js que contenga lo mismo pero sin tus credenciales. Recuerda no subir tu archivo database.js a tu repositorio github.
+
+🔷 _Ejercicio 2_
+
+⦁ Crea un archivo products.js dentro de una carpeta routes que contenga todas las rutas de products.
+
+⦁ Crea un ProductController.js que contenga todas las acciones de los productos.
+
+⦁ Crea un archivo categories.js dentro de una carpeta routes que contenga todas las rutas de categories.
+
+⦁ Crea un CategoryController.js que contenga todas las acciones de los categories.
+
