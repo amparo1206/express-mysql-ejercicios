@@ -1,4 +1,4 @@
-# Express & MySQL
+# Express & MySQL 🚀
 
 Ejercicios de Express.j y MySQL en el Bootcamp de The Bridge
 
@@ -14,7 +14,7 @@ _Objetivos de los ejercicios_
 
 ⦁ Aprender a utilizar MySql con Express.
 
-## ⚪ Endpoints parte 1
+## ⚪ Endpoints parte 1 📚
 
 🔷 _Ejercicio 1_
 
@@ -25,7 +25,7 @@ _Objetivos de los ejercicios_
 ⦁ Tabla Categories. ✅
 
 
-❗❗IMPORTANTE ➡️ Si tenemos una relación de muchos a muchos debemos de crear una tabla intermedia.❗❗
+❗❗IMPORTANTE ➡️ Si tenemos una relación de muchos a muchos debemos de crear una tabla intermedia❗❗
 
 
 🔷 _Ejercicio 2_
@@ -60,7 +60,7 @@ _Objetivos de los ejercicios_
 
 ⦁ Crea un endpoint donde puedas eliminar un producto por su id. ✅
 
-## ⚪ Endpoints parte 2
+## ⚪ Endpoints parte 2 📚
 
 🔷 _Ejercicio 1_
 
